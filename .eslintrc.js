@@ -3,11 +3,7 @@ module.exports = {
   env: {
     node: true
   },
-  extends: [
-    'plugin:vue/vue3-strongly-recommended',
-    '@vue/typescript/recommended',
-    '@vue/standard'
-  ],
+  extends: ['plugin:vue/vue3-strongly-recommended', '@vue/typescript/recommended', '@vue/standard'],
   parserOptions: {
     ecmaVersion: 2022
   },
@@ -29,19 +25,6 @@ module.exports = {
       }
     ],
     '@typescript-eslint/no-explicit-any': 'off',
-    'space-before-function-paren': 'off',
-    'vue/array-bracket-spacing': 'error',
-    'vue/arrow-spacing': 'error',
-    'vue/block-spacing': 'error',
-    'vue/brace-style': 'error',
-    'vue/camelcase': 'error',
-    'vue/comma-dangle': 'error',
-    'vue/component-name-in-template-casing': 'error',
-    'vue/eqeqeq': 'error',
-    'vue/key-spacing': 'error',
-    'vue/match-component-file-name': 'error',
-    'vue/object-curly-spacing': 'off',
-    'no-useless-escape': 'off',
     '@typescript-eslint/no-this-alias': [
       'error',
       {
@@ -49,23 +32,26 @@ module.exports = {
         allowedNames: ['self'] // Allow `const self = this`; `[]` by default
       }
     ],
-    'vue/attribute-hyphenation': 'off',
-    'vue/custom-event-name-casing': 'off',
-    'vue/max-attributes-per-line': [
-      2,
+    'linebreak-style': [0, 'error', 'windows'],
+    'comma-dangle': ['error', 'never'],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        singleline: 10,
-        multiline: {
-          max: 1,
-          allowFirstLine: false
-        }
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never'
       }
     ],
+    'vue/max-attributes-per-line': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'max-len': ['error', { code: 300 }],
     'vue/html-self-closing': [
       'error',
       {
         html: {
-          void: 'any',
+          void: 'never',
           normal: 'any',
           component: 'any'
         },
@@ -73,18 +59,28 @@ module.exports = {
         math: 'always'
       }
     ],
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/html-indent': 'off'
+    'import/no-unresolved': [
+      2,
+      {
+        ignore: ['^@/'] // @ 是设置的路径别名
+      }
+    ],
+    'no-mixed-spaces-and-tabs': 0,
+    'no-plusplus': 0, // 不允许使用++，使用+=
+    'prefer-template': 0, // 必须使用es6中的模板文字而不是字符串连接 ``
+    'no-param-reassign': 0,
+    'vue/attribute-hyphenation': 0, // 在模板中的自定义组件上强制执行属性命名样式,不能驼峰必须使用-间隔
+    'no-restricted-syntax': 0,
+    'no-else-return': 0,
+    'no-restricted-globals': 0, //不允许使用特定的全局变量，self top等
+    'dot-notation': 0 //可以使用点符号（foo.bar）或方括号表示法（foo["bar"]）来访问属性。点符号通常是首选,方括号会警报
   },
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
         jest: true
       }
     }
   ]
-}
+};

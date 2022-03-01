@@ -31,7 +31,6 @@
 - vue3 + composition api
 - typescript
 - sass (dart sass)
-- [echats5](https://github.com/apache/echarts)
 
 vue next 系列:
 

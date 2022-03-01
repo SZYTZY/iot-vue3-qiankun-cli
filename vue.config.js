@@ -1,18 +1,18 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 const { name } = require('./package');
-const path = require('path')
-const WebpackBar = require('webpackbar')
-const dayjs = require('dayjs')
-const time = dayjs().format('YYYY-M-D HH:mm:ss')
+const path = require('path');
+const WebpackBar = require('webpackbar');
+const dayjs = require('dayjs');
+const time = dayjs().format('YYYY-M-D HH:mm:ss');
 // js压缩插件，开启多进程构建，删除console，删除debugger
-const TerserPlugin = require('terser-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 // 开启文件缓存，优化构建速度
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 // js压缩插件，开启gzip压缩
-const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
-process.env.VUE_APP_UPDATE_TIME = time
-const title = 'vue3Project'
+process.env.VUE_APP_UPDATE_TIME = time;
+const title = 'vue3Project';
 // gzip
 const compress = new CompressionWebpackPlugin({
   // 目标资源文件名
@@ -25,7 +25,7 @@ const compress = new CompressionWebpackPlugin({
   minRatio: 0.8,
   // 是否删除原始资源
   deleteOriginalAssets: false
-})
+});
 module.exports = {
   publicPath: './',
   outputDir: 'dist',
@@ -35,7 +35,7 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     hot: true,
-    port: '9999',
+    port: '8989',
     open: true,
     noInfo: false,
     overlay: {
@@ -44,31 +44,29 @@ module.exports = {
     },
     disableHostCheck: true,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': '*'
     },
     proxy: {
-			'/apiprod': {
-				target: 'https://www.haigeek.com',
-				changeOrigin: true,
-				secure: false,
-				pathRewrite: {
-					'^/apiprod': ''
-				},
-				headers: {
-					host: 'https://www.haigeek.com',
-					origin: 'https://www.haigeek.com',
-					referer: 'https://www.haigeek.com'
-				}
-			}
-		}
+      '/apiprod': {
+        target: 'https://www.haigeek.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/apiprod': ''
+        },
+        headers: {
+          host: 'https://www.haigeek.com',
+          origin: 'https://www.haigeek.com',
+          referer: 'https://www.haigeek.com'
+        }
+      }
+    }
   },
   pluginOptions: {
     // 提取公共样式和变量
     'style-resources-loader': {
       preProcessor: 'scss',
-      patterns: [
-        path.resolve(__dirname, 'src/asets/style/var.scss')
-      ]
+      patterns: [path.resolve(__dirname, 'src/asets/style/var.scss')]
     }
   },
   /**
@@ -120,12 +118,12 @@ module.exports = {
         //把子应用打包成umd库格式（必须）
         library: `${name}-[name]`,
         libraryTarget: 'umd',
-        jsonpFunction: `webpackJsonp_${name}`,
+        jsonpFunction: `webpackJsonp_${name}`
       }
-    }
+    };
   },
   // 配置
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     // 返回一个将会被合并的对象
     if (process.env.NODE_ENV === 'production') {
       return {
@@ -148,7 +146,7 @@ module.exports = {
             })
           ]
         }
-      }
+      };
     }
   }
-}
+};

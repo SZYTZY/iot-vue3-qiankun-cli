@@ -15,7 +15,7 @@
     "commitlint": "commitlint --config commitlint.config.js -e -V"
   },
   "dependencies": {
-    "iot-axios": "^1.0.12",
+    "iot-axios": "^1.0.17",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
     "core-js": "^3.6.5",
@@ -81,9 +81,8 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "homepage": "https://RainManGO.github.io/vue3-composition-admin",
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
+    "./src/*.{js,jsx,vue,ts,tsx}": [
       "vue-cli-service lint",
       "prettier --config .prettierrc.json --write",
       "eslint --cache --fix",
