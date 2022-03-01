@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   ignores: [
-    (commit) => {
+    commit => {
       return commit.slice(0, 1).includes(':')
     }
   ],
