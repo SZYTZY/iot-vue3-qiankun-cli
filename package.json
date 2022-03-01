@@ -82,11 +82,10 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "./src/*.{js,jsx,vue,ts,tsx}": [
+    "*.{js,jsx,vue,ts,tsx}": [
       "vue-cli-service lint",
       "prettier --config .prettierrc.json --write",
-      "eslint --cache --fix",
-      "git add ."
+      "eslint --cache --fix"
     ]
   },
   "config": {

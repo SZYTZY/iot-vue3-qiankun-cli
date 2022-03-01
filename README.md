@@ -46,18 +46,18 @@ vue next 系列:
 ```
 
 ```shell
-  yarn serve:dev
+  yarn serve
 ```
 
 ```shell
-  npm run serve:dev
+  npm run serve
 ```
 
 多环境命令查看 package.json script:
 
 ```shell
-    "serve:dev": "cross-env NODE_ENV=development dotenv -e .env.dev.serve vue-cli-service serve",
-    "build:dev": "cross-env NODE_ENV=production  dotenv -e .env.dev.build vue-cli-service build",
+    "serve": "cross-env NODE_ENV=development dotenv -e .env.dev.serve vue-cli-service serve",
+    "build": "cross-env NODE_ENV=production  dotenv -e .env.dev.build vue-cli-service build",
     "serve:prod": "cross-env NODE_ENV=development dotenv -e .env.prod.serve vue-cli-service serve",
     "build:prod": "cross-env NODE_ENV=production  dotenv -e .env.prod.build vue-cli-service build",
 ```
@@ -73,7 +73,15 @@ or
 ```shell
     npm run lint
 ```
+### 代码提交
 
+```shell
+  使用
+  全局安装cz：npm install -g commitizen
+  git add .
+  git cz     
+  git push
+```
 提交自动检测：
 
 ```shell
@@ -84,8 +92,7 @@ or
   "*.{js,jsx,vue,ts,tsx}": [
   "vue-cli-service lint",
   "prettier --config .prettierrc.json --write",
-  "eslint --cache --fix",
-  "git add"
+  "eslint --cache --fix"
   ]
 }
 ```
