@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "cross-env NODE_ENV=development dotenv -e .env.dev.serve vue-cli-service serve",
-    "build": "cross-env NODE_ENV=development  dotenv -e .env.dev.build vue-cli-service build",
-    "serve:prod": "cross-env NODE_ENV=production dotenv -e .env.prod.serve vue-cli-service serve",
+    "build": "cross-env NODE_ENV=production  dotenv -e .env.dev.build vue-cli-service build",
+    "serve:prod": "cross-env NODE_ENV=development dotenv -e .env.prod.serve vue-cli-service serve",
     "build:prod": "cross-env NODE_ENV=production  dotenv -e .env.prod.build vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
@@ -85,7 +85,8 @@
     "*.{js,jsx,vue,ts,tsx}": [
       "vue-cli-service lint",
       "prettier --config .prettierrc.json --write",
-      "eslint --fix"
+      "eslint --fix",
+      "git add ."
     ]
   },
   "config": {

@@ -31,7 +31,7 @@ module.exports = {
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: true,
-  transpileDependencies: ['vue-echarts', 'resize-detector'],
+  // transpileDependencies: ['vue-echarts', 'resize-detector'], //指定需要编译的模块-适配ie（es6）
   productionSourceMap: false,
   devServer: {
     hot: true,
@@ -147,6 +147,6 @@ module.exports = {
           ]
         }
       };
-    };
+    }
   }
 };
