@@ -73,7 +73,8 @@ module.exports = {
     'no-restricted-syntax': 0,
     'no-else-return': 0,
     'no-restricted-globals': 0, //不允许使用特定的全局变量，self top等
-    'dot-notation': 0 //可以使用点符号（foo.bar）或方括号表示法（foo["bar"]）来访问属性。点符号通常是首选,方括号会警报
+    'dot-notation': 0, //可以使用点符号（foo.bar）或方括号表示法（foo["bar"]）来访问属性。点符号通常是首选,方括号会警报
+    'space-before-function-paren': 0
   },
   overrides: [
     {

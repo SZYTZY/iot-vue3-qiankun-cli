@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
@@ -13,7 +13,7 @@ export default defineComponent({
     const store = useStore()
     const { locale } = useI18n()
     const selfwindow: any = window
-    selfwindow.updateLanguage = function(lang: string) {
+    selfwindow.updateLanguage = function (lang: string) {
       locale.value = lang
       store.commit('updateLanguage', lang)
     }
