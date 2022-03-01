@@ -2,10 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 export const constantRoutes: Array<RouteRecordRaw> = [
   {
     path: '/childproject/apply',
-    component: () =>
-      import(
-        /* webpackChunkName: "apply" */ '@/views/apply/Index.vue'
-      ),
+    component: () => import(/* webpackChunkName: "apply" */ '@/views/apply/Index.vue'),
     name: 'apply',
     meta: {
       title: 'apply',
@@ -20,7 +17,7 @@ const router = createRouter({
 })
 
 export function resetRouter() {
-  ;(router as any).matcher = (router as any).matcher // reset router
+  (router as any).matcher = (router as any).matcher // reset router
 }
 
 export default router

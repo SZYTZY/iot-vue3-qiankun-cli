@@ -2,20 +2,12 @@
   <div class="dashboard-container">
     <div>
       <el-dropdown>
-        <svg
-          class="icon"
-          aria-hidden="true"
-          font-size="20px"
-        >
+        <svg class="icon" aria-hidden="true" font-size="20px">
           <use xlink:href="#iconlanguage" />
         </svg>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item
-              v-for="item in languages"
-              :key="item.value"
-              :disabled="language === item.value"
-            >
+            <el-dropdown-item v-for="item in languages" :key="item.value" :disabled="language === item.value">
               <span @click="handleSetLanguage(item.value)">{{ item.name }}</span>
             </el-dropdown-item>
           </el-dropdown-menu>
@@ -35,7 +27,7 @@ import { getApplyList } from '@/apis/apply'
 type Language = {
   name: string
   value: string
-}
+};
 export default defineComponent({
   setup() {
     const store = useStore()
