@@ -30,6 +30,7 @@
 import { useStore } from 'vuex'
 import { computed, defineComponent, reactive, toRefs } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { getApplyList } from '@/apis/apply'
 
 type Language = {
   name: string
@@ -51,6 +52,12 @@ export default defineComponent({
     })
     const language = computed(() => {
       return store.state.language
+    })
+    // 接口请求
+    getApplyList({
+      autoerror: 1
+    }).then((res: any) => {
+      console.log(res)
     })
     return {
       ...toRefs(state),

@@ -1,14 +1,14 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 export const constantRoutes: Array<RouteRecordRaw> = [
   {
-    path: '/childproject/dashboard',
+    path: '/childproject/apply',
     component: () =>
       import(
-        /* webpackChunkName: "dashboard" */ '@/views/dashboard/Index.vue'
+        /* webpackChunkName: "apply" */ '@/views/apply/Index.vue'
       ),
-    name: 'Dashboard',
+    name: 'apply',
     meta: {
-      title: 'dashboard',
+      title: 'apply',
       affix: true
     }
   }
