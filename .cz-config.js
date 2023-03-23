@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports = {
   types: [
@@ -12,9 +12,9 @@ module.exports = {
     },
     { value: 'perf', name: 'perf:     性能优化' },
     { value: 'test', name: 'test:     增加测试' },
-    { value: 'chore', name: 'chore:    构建过程或辅助工具的变动' },
-    { value: 'revert', name: 'revert:   回退' },
-    { value: 'build', name: 'build:    打包' }
+    { value: 'chore', name: 'chore:    构建过程或辅助工具、依赖库的变动' },
+    { value: 'revert', name: 'revert:   回滚到上一个版本' },
+    { value: 'build', name: 'build:    编译相关的修改，例如发布版本、对项目构建或者依赖的改动' }
   ],
   // override the messages, defaults are as follows
   messages: {
@@ -33,4 +33,4 @@ module.exports = {
   skipQuestions: ['body', 'footer'],
   // limit subject length, commitlint默认是72
   subjectLimit: 72
-}
+};

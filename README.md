@@ -92,7 +92,8 @@ or
   "*.{js,jsx,vue,ts,tsx}": [
   "vue-cli-service lint",
   "prettier --config .prettierrc.json --write",
-  "eslint --cache --fix"
+  "eslint --cache --fix",
+  "git add ."
   ]
 }
 ```
