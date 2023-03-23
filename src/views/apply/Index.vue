@@ -4,6 +4,7 @@
       <el-dropdown>
         <svg class="icon" aria-hidden="true" font-size="20px">
           <use xlink:href="#iconlanguage" />
+          1
         </svg>
         <template #dropdown>
           <el-dropdown-menu>
